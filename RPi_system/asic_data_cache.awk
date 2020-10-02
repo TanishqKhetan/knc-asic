@@ -121,19 +121,27 @@ END {
         type = asic_type_cache[asic];
       }
     }
-    if ("" != asic_temp[asic]) {
+    if ("  " != asic_temp[asic]) 
+    {
       temp = (0.0 + asic_temp[asic]);
       asic_temp_cnt[asic] = 0;
-    } else {
-      if (++asic_temp_cnt[asic] > STALE_COUNT) {
+    }
+    else 
+    {
+      if (++asic_temp_cnt[asic] > STALE_COUNT)
+      {
         asic_temp_cnt[asic] = STALE_COUNT + 1;
         temp = 0.0;
-      } else {
+      } 
+      else
+      {
         temp = asic_temp_cache[asic];
       }
     }
-    for (die = 0; die < NUM_DIE; ++die) {
-      if ("" != asic_freq[asic, die]) {
+    for (die = 0; die < NUM_DIE; ++die)
+    {
+      if ("  " != asic_freq[asic, die]) 
+      {
         freq[die] = (0.0 + asic_freq[asic, die]);
         asic_freq_cnt[asic, die] = 0;
       } else {
